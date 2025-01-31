@@ -1,0 +1,1 @@
+streamlit run C:\Users\deyvi\Documents\ImperioPy\Aplicativos\Automação\Banco_e_Visualizador_De_Ativos\Visualizer_Trading_Data.py
