@@ -2,6 +2,12 @@
 # Descrição:
 #   Construção da Interface Web que disporá todas as configurações
 #   e formas de visualização dos dados salvos.
+#
+# Dicas de Construção:
+#   Aparentemente, é como o site ficasse rodando o código
+#   a cada instante, não é tão intuitivo.
+#
+#
 from Back_Web import *
 
 ATIVOS_CADASTRADOS = obter_ativos_cadastrados()
@@ -11,11 +17,29 @@ st.sidebar.title(
     "Configurações"
 )
 
+ativos_cadastrados = obter_ativos_cadastrados()
+
 combobox_ativo = st.sidebar.selectbox(
-    "Selecione, ou Digite, o Ativo",
-    obter_ativos_cadastrados()
+    "Selecione o Ativo",
+    ativos_cadastrados
 )
 
+
+if combobox_ativo != "":
+    if combobox_ativo.startswith(
+        "Adici"
+    ):
+        # Vamos adicionar um novo ativo.
+        cadastrar_novo_ativo()
+        st.sidebar.write("fef")
+
+    # Temos garantia que outro ativo não cadastrado não será aceito.
+    else:
+        # Então vamos apresentar um ativo já existente.
+        pass
+
+
+# Título Chamativo
 st.markdown(
     """
     <style>
