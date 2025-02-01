@@ -10,6 +10,9 @@
 #
 from Back_Web import *
 
+st.set_page_config(
+    layout="wide"
+)
 ATIVOS_CADASTRADOS = obter_ativos_cadastrados()
 
 # Barra Lateral
@@ -26,35 +29,35 @@ combobox_ativo = st.sidebar.selectbox(
 
 
 if combobox_ativo != "":
+
     if combobox_ativo.startswith(
         "Adici"
     ):
         # Vamos adicionar um novo ativo.
         cadastrar_novo_ativo()
-        st.sidebar.write("fef")
 
     # Temos garantia que outro ativo não cadastrado não será aceito.
     else:
         # Então vamos apresentar um ativo já existente.
         pass
+else:
 
+    # Título Chamativo
+    st.markdown(
+        """
+        <style>
+        .big-title {
+            font-size: 40px;
+            text-align: center;
+            color: #FF4B4B;
+            font-family: 'Roboto', sans-serif;
+            margin-top: 20%;
+        }
+        </style>
 
-# Título Chamativo
-st.markdown(
-    """
-    <style>
-    .big-title {
-        font-size: 40px;
-        text-align: center;
-        color: #FF4B4B;
-        font-family: 'Roboto', sans-serif;
-        margin-top: 20%;
-    }
-    </style>
-    
-    <div class="big-title">
-        Permita-me apresentar-lhe algo 🚀!
-    </div>
-    """,
-    unsafe_allow_html=True
-)
+        <div class="big-title">
+            Permita-me apresentar-lhe algo 🚀!
+        </div>
+        """,
+        unsafe_allow_html=True
+    )

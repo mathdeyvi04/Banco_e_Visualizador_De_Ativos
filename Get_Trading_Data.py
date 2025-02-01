@@ -1,6 +1,6 @@
 import requests as re
 from pprint import pprint
-
+import streamlit as st
 
 def obter_chave(
         nome_do_arquivo_que_contem_chave: str
@@ -24,16 +24,3 @@ def obter_chave(
     return chave
 
 
-def buscar_ativos_semelhantes(
-        chute_do_nome_do_ativo: str,
-        chave: str
-) -> list:
-    """
-    Descrição:
-        Obtém lista de possíveis ativos a
-        partir do chute do usuário.
-    """
-
-    return re.get(
-        f"https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords={chute_do_nome_do_ativo}&apikey={chave}"
-    ).json()["bestMatches"]
