@@ -1,6 +1,1 @@
 streamlit run C:\Users\deyvi\Documents\ImperioPy\Aplicativos\Automação\Banco_e_Visualizador_De_Ativos\Visualizer_Trading_Data.py
-
-Infelizmente, a ideia do web scrapping foi de vapo. Acontece que a API do Alpha Vantage é disparado a melhor opção do mercado, vamos ter que resolver isso.
-
-Possível Solução:
-	Múltiplos e-mails, múltiplas chaves.
