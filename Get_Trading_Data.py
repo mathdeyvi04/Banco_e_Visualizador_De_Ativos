@@ -229,7 +229,7 @@ def obter_dados_de_ativo(
         return corrigido
 
     resultado = {} if teste else re.get(
-        f"https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=IBM&interval=5min&apikey={chave[0][chave[1]]}"
+        f"https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol={codigo}&interval=5min&apikey={chave[0][chave[1]]}"
     ).json()
 
     if "Information" in resultado:

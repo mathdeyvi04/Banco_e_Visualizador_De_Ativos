@@ -13,9 +13,14 @@ for ativo in ativos:
         "",
         "Adicionar Ativo"
     }:
+        print(
+            f"Concluí {ativo}"
+        )
         obter_dados_de_ativo(
             ativo,
-            CHAVE
+            CHAVE,
+            teste=False,
+            deseja_saida=False
         )
 
 
