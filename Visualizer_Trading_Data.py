@@ -8,7 +8,6 @@
 #   a cada instante, não é tão intuitivo.
 #
 #
-import streamlit as st
 from Back_Web import *
 
 st.set_page_config(
@@ -65,8 +64,55 @@ if combobox_ativo != "":
 
     # Temos garantia que outro ativo não cadastrado não será aceito.
     else:
-        # Então vamos apresentar um ativo já existente.
-        pass
+
+        opcoes_de_apresentacao = st.sidebar.multiselect(
+            "Selecione o que deseja ver",
+            options=(
+                "open",
+                "high",
+                "low",
+                "close"
+            ),
+            help="Mostrará os valores correspondentes aos significados selecionados",
+        )
+
+        resultados_do_ativo = obter_dados_de_ativo(
+            combobox_ativo,
+            st.session_state[
+                "chaves"
+            ],
+            True
+        )
+
+        plotando(
+            resultados_do_ativo,
+            opcoes_de_apresentacao
+        )
+
+
+        # st.write(
+        #     resultado
+        # )
+        #
+        # pp.plot(
+        #     resultado["open"]
+        # )
+        # pp.ylim(
+        #     min(resultado["open"]),
+        #     max(resultado["open"])
+        # )
+        # pp.title(
+        #     "Open"
+        # )
+        # pp.xlabel(
+        #     "Instante"
+        # )
+        # pp.show()
+        #
+        # st.pyplot(pp)
+
+
+
 else:
 
     # Título Chamativo

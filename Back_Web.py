@@ -1,37 +1,6 @@
 from Get_Trading_Data import *
 
 
-def obter_ativos_cadastrados() -> list[str]:
-    """
-    Descrição:
-        Obtém ativos já cadastrados a partir do configuration.txt
-    """
-
-    resultado = [
-        "",
-        "Adicionar Ativo"
-    ]
-
-    for arquivo_ou_pasta_disponivel in listdir(
-          r"C:\Users\deyvi\Downloads"
-    ):
-        if arquivo_ou_pasta_disponivel.startswith(
-            "ativo="
-        ):
-            # Temos um ativo salvo.
-            resultado.append(
-                arquivo_ou_pasta_disponivel.replace(
-                    "ativo=",
-                    ""
-                ).replace(
-                    ".txt",
-                    ""
-                )
-            )
-
-    return resultado
-
-
 def selecionar_atributos_do_ativo(
         opcao_escolhida: str | None
 ) -> None:
