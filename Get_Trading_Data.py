@@ -192,7 +192,7 @@ def obter_dados_de_ativo(
             corretamente
         """
 
-        instantes = list(resultado_.keys())
+        instantes = list(resultado_.keys())[::-1]
 
         colunas = (
             "open",
@@ -297,7 +297,7 @@ def plotando(
 
     plotly_figure = px.line(
         data_frame=info[opcoes],
-        title="Apresentando Valores",
+        title=f"Apresentando Valores para {info['inicio'][0]}-{info['final'][99]}",
         labels={
             "value": "Valor",
             "index": "Instantes"
@@ -307,12 +307,3 @@ def plotando(
     st.plotly_chart(
         plotly_figure
     )
-
-
-
-
-
-
-
-
-
