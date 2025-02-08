@@ -115,26 +115,9 @@ def buscar_ativos_semelhantes(
         partir do chute do usuário.
     """
 
-    resultados = {
-        "bestMatches": [
-            # Para não abusar da API
-            {
-                "1. symbol": f"AW {i}",
-                "2. name": "A&W Revenue Royalties Income Fund",
-                "3. type": "Equity",
-                "4. region": "Toronto",
-                "5. marketOpen": "09:30",
-                "6. marketClose": "16:00",
-                "7. timezone": "UTC-05",
-                "8. currency": "CAD",
-                "9. matchScore": "0.6800"
-            } for i in range(0, 10)
-        ]
-    }
-
-    # resultados = re.get(
-    #     f"https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords={chute_do_nome_do_ativo}&apikey={chave[0][chave[1]]}"
-    # ).json()
+    resultados = re.get(
+         f"https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords={chute_do_nome_do_ativo}&apikey={chave[0][chave[1]]}"
+    ).json()
 
     try:
         if "Quantas Vezes Usamos API" not in st.session_state:
@@ -145,8 +128,6 @@ def buscar_ativos_semelhantes(
         st.session_state[
             "Quantas Vezes Usamos API"
         ] += 1
-
-        st.info(f"Hop vim: {st.session_state['Quantas Vezes Usamos API']}.")
 
         if "Information" in resultados:
             # Chegamos no limite desta chave.
