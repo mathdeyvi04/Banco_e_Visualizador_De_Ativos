@@ -20,11 +20,23 @@ negociação.
 * Cadastramento de Ativos Desejados
 
 <div align="center">
-<img src="https://github.com/user-attachments/assets/e260a419-68ee-4ee2-82b1-aa39b38733a6.png" />
+<img src="https://github.com/user-attachments/assets/e260a419-68ee-4ee2-82b1-aa39b38733a6" width="1000"/>
 </div>
 
-* Visualização de Valores Que Foram Obtidos Dos Ativos
+* Visualização de Valores Obtidos Dos Ativos
+
+> Infelizmente, ainda não pega os valores com uma determinada periodicidade, devido à limitação da API paga.
+> Apenas obtém os valores diários do ativo.
+
+> Apesar da ideia de dispor informações cadastradas do ativo e permitir alteração delas, não foi possível tal realização
+> devido à limitação da API.
 
 <div align="center">
-<img src="https://github.com/user-attachments/assets/9e96fa2e-b97c-4242-b632-9abaefb38b87.png" />
+<img src="https://github.com/user-attachments/assets/9e96fa2e-b97c-4242-b632-9abaefb38b87" width="1000"/>
 </div>
+
+
+## Pontos Explicados
+
+* Por que não usar web scrapping?
+    * Utilizamos a API limitada e gratuita pela simplicidade extrema.
